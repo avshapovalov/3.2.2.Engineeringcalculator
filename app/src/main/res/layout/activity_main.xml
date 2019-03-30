@@ -30,7 +30,7 @@
             android:id="@+id/btn_changecalk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Инжинерный/Обычный"
+            android:text="@string/calk_type"
             app:layout_constraintBottom_toTopOf="@id/framesimplecalk"
             app:layout_constraintTop_toBottomOf="@id/display_layout" />
 
