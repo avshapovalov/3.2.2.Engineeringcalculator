@@ -1,6 +1,7 @@
 package com.example.engineeringcalculator;
 
 import android.app.Activity;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -15,11 +16,11 @@ public class MainActivity extends Activity implements OnClickListener {
     Button btSix, btSeven, btEight, btNine, btZero;
     Button btPlus, btMinus, btMulti, btDiv, btEqual, btClear, btPercent,btChangeSign;
     TextView tvResult;
-
     Button changeCalkType;
     FrameLayout simplCalk, engeneeringCalk;
     int operand1, operand2, flagAction;
     double result;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +29,11 @@ public class MainActivity extends Activity implements OnClickListener {
         simplCalk = (FrameLayout) findViewById(R.id.framesimplecalk);
         engeneeringCalk = (FrameLayout) findViewById(R.id.frameengeneeringcalk);
 
-        simplCalk.setVisibility(View.GONE);
-        engeneeringCalk.setVisibility(View.VISIBLE);
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+            simplCalk.setVisibility(View.VISIBLE);
+            engeneeringCalk.setVisibility(View.GONE);
+        }
+
         changeCalkType = (Button) findViewById(R.id.btn_changecalk);
 
         btOne = (Button) findViewById(R.id.btn_1);
@@ -199,4 +203,5 @@ public class MainActivity extends Activity implements OnClickListener {
             tvResult.setText(Integer.toString(operand2));
         }
     }
+
 }
