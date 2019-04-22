@@ -3,8 +3,9 @@ package com.example.engineeringcalculator;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -13,8 +14,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.IOException;
-import java.io.InputStream;
 
 public class MainActivity extends Activity implements OnClickListener {
 
@@ -27,8 +26,6 @@ public class MainActivity extends Activity implements OnClickListener {
     int operand1, operand2, flagAction;
     double result;
     Button options;
-    ImageView mImageView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,15 +33,7 @@ public class MainActivity extends Activity implements OnClickListener {
         setContentView(R.layout.activity_main);
         simplCalk = (FrameLayout) findViewById(R.id.framesimplecalk);
         engeneeringCalk = (FrameLayout) findViewById(R.id.frameengeneeringcalk);
-        mImageView = (ImageView) findViewById(R.id.imageView);
-        try {
-            InputStream ims = getAssets().open("default.png");
-            Drawable d = Drawable.createFromStream(ims, null);
-            mImageView.setImageDrawable(d);
-            ims.close();
-        } catch(IOException ex) {
-            return;
-        }
+
         if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
             simplCalk.setVisibility(View.VISIBLE);
             engeneeringCalk.setVisibility(View.GONE);
