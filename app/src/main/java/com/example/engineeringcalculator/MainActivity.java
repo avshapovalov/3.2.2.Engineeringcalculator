@@ -1,6 +1,7 @@
 package com.example.engineeringcalculator;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
@@ -20,6 +21,7 @@ public class MainActivity extends Activity implements OnClickListener {
     FrameLayout simplCalk, engeneeringCalk;
     int operand1, operand2, flagAction;
     double result;
+    Button options;
 
 
     @Override
@@ -55,7 +57,9 @@ public class MainActivity extends Activity implements OnClickListener {
         tvResult = (TextView) findViewById(R.id.display);
         btPercent = (Button) findViewById(R.id.btn_percent);
         btChangeSign = (Button) findViewById(R.id.btn_change_sign);
+        options = (Button) findViewById(R.id.options);
 
+        options.setOnClickListener(this);
         btOne.setOnClickListener(this);
         btTwo.setOnClickListener(this);
         btThree.setOnClickListener(this);
@@ -87,6 +91,9 @@ public class MainActivity extends Activity implements OnClickListener {
     @Override
     public void onClick(View v) {
         switch(v.getId()){
+            case R.id.options:
+                Intent intent = new Intent(MainActivity.this, OptionsActivity.class);
+                startActivity(intent);
             case R.id.btn_1:
                 ClickNumber(1);
                 break;

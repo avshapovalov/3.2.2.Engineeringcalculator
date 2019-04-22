@@ -30,4 +30,8 @@
     <string name="sin">Sin</string>
     <string name="x_2">x^2</string>
     <string name="calk_type">Инженерный/Обычный</string>
+    <string name="options">Настройки</string>
+    <string name="ok">Ок</string>
+    <string name="options2">Настройки</string>
+    <string name="link">/Память устройства/Pictures/default.png</string>
 </resources>

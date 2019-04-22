@@ -5,34 +5,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/display_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@id/btn_changecalk"
-            app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/display"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorBlack"
-                android:gravity="right"
-                android:orientation="horizontal"
-                android:text="@string/calk_default"
-                android:textColor="@color/colorWhite"
-                android:textSize="33dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </android.support.constraint.ConstraintLayout>
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/display_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/btn_changecalk"
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/btn_changecalk"
+            android:id="@+id/options"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/calk_type"
-            app:layout_constraintBottom_toTopOf="@id/framesimplecalk"
-            app:layout_constraintTop_toBottomOf="@id/display_layout" />
+            android:text="@string/options"
+            app:layout_constraintBottom_toTopOf="@id/display"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/display"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlack"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:text="@string/calk_default"
+            android:textColor="@color/colorWhite"
+            android:textSize="33dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/options" />
+    </android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btn_changecalk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/calk_type"
+        app:layout_constraintBottom_toTopOf="@id/framesimplecalk"
+        app:layout_constraintTop_toBottomOf="@id/display_layout" />
 
     <FrameLayout
         android:id="@+id/framesimplecalk"
@@ -221,6 +232,7 @@
                 android:text="@string/bracker1"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
             <Button
                 android:id="@+id/btn_bracket2"
                 android:layout_width="wrap_content"
@@ -228,6 +240,7 @@
                 android:text="@string/bracket2"
                 app:layout_constraintLeft_toRightOf="@id/btn_bracket1"
                 app:layout_constraintTop_toTopOf="parent" />
+
             <Button
                 android:id="@+id/btn_inv"
                 android:layout_width="wrap_content"
@@ -235,6 +248,7 @@
                 android:text="@string/inv"
                 app:layout_constraintLeft_toRightOf="@id/btn_bracket2"
                 app:layout_constraintTop_toTopOf="parent" />
+
             <Button
                 android:id="@+id/btn_in"
                 android:layout_width="wrap_content"
@@ -290,5 +304,6 @@
                 app:layout_constraintTop_toBottomOf="@id/btn" />
 
         </android.support.constraint.ConstraintLayout>
+
     </FrameLayout>
 </android.support.constraint.ConstraintLayout>
