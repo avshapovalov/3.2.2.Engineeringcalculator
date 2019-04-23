@@ -3,9 +3,7 @@ package com.example.engineeringcalculator;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -16,7 +14,7 @@ import android.widget.Toast;
 
 
 public class MainActivity extends Activity implements OnClickListener {
-
+    public static ImageView mImageView;
     Button btOne, btTwo, btThree, btFour, btFive;
     Button btSix, btSeven, btEight, btNine, btZero;
     Button btPlus, btMinus, btMulti, btDiv, btEqual, btClear, btPercent,btChangeSign;
@@ -33,12 +31,11 @@ public class MainActivity extends Activity implements OnClickListener {
         setContentView(R.layout.activity_main);
         simplCalk = (FrameLayout) findViewById(R.id.framesimplecalk);
         engeneeringCalk = (FrameLayout) findViewById(R.id.frameengeneeringcalk);
-
+        mImageView = findViewById(R.id.imageView);
         if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
             simplCalk.setVisibility(View.VISIBLE);
             engeneeringCalk.setVisibility(View.GONE);
         }
-
         changeCalkType = (Button) findViewById(R.id.btn_changecalk);
 
         btOne = (Button) findViewById(R.id.btn_1);
@@ -97,6 +94,7 @@ public class MainActivity extends Activity implements OnClickListener {
             case R.id.options:
                 Intent intent = new Intent(MainActivity.this, OptionsActivity.class);
                 startActivity(intent);
+
             case R.id.btn_1:
                 ClickNumber(1);
                 break;
